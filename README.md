@@ -32,7 +32,7 @@ Volumes mounted to the container is specified in `docker-compose.yml`. Please ch
 User settigs are controled by rstudio-prefs.json file.
 
 ### How to run
-Run the `docker-compose up`. R Server will start up automatically, then access to localhost:8787/ via browser.
+Run the `docker-compose up`. RStudio Server will start up automatically, then access to localhost:8787/ via browser.
 **Note: Authentication step is disabled. You should not use this image in publicly accessible environment**
 
 ### Author
