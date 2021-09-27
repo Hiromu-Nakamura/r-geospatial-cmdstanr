@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  r-geo:
+    container_name: r-geo
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        - LANG=ja_JP.UTF-8
+        - LC_ALL=ja_JP.UTF-8
+    image: r-geo # provide an image name
+    ports:
+      - "8787:8787"
+    environment:
+      - DISABLE_AUTH=true
+      - TZ=Asia/Tokyo
+    volumes:
+      - \\wsl$$\Ubuntu\home\hnaka\share_w_docker\r:/home/rstudio/share_w_host
+    tty: true
+    stdin_open: true
