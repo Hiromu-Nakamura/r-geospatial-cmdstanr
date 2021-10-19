@@ -18,12 +18,12 @@ RUN apt-get update \
     && install2.r --error --deps TRUE \
         posterior \
         bayesplot \
-    && Rscript -e "install.packages('cmdstanr', repos = c('https://mc-stan.org/r-packages/', getOption('repos')))" \
+        DataExplorer \
+    && install2.r --error --deps TRUE --repos https://mc-stan.org/r-packages/ cmdstanr \
     && rm -rf /tmp/downloaded_packages/ /tmp/*.rds \
-    && chown rstudio /home/rstudio/.config/rstudio/rstudio-prefs.json
+    && mkdir /home/rstudio/.cmdstanr/ \
+    && Rscript -e "cmdstanr::install_cmdstan(dir = '/home/rstudio/.cmdstanr/', cores = 2)" \
+    && Rscript -e "cmdstanr::set_cmdstan_path(path = '/home/rstudio/.cmdstanr/cmdstan-2.28.0')" \
+    && chown rstudio -R /home/rstudio/
 
-USER rstudio
-WORKDIR /home/rstudio
-RUN Rscript -e "cmdstanr::install_cmdstan(cores = 2)"
-
-USER root
+CMD ["/init"]
