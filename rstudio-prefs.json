@@ -2,9 +2,9 @@
     "panes": {
         "quadrants": [
             "Source",
-            "TabSet2",
             "Console",
-            "TabSet1"
+            "TabSet1",
+            "TabSet2"
         ],
         "tabSet1": [
             "Environment",
@@ -12,8 +12,8 @@
             "Connections",
             "Build",
             "VCS",
-            "Presentation",
-            "Tutorial"
+            "Tutorial",
+            "Presentation"
         ],
         "tabSet2": [
             "Files",
@@ -22,9 +22,11 @@
             "Help",
             "Viewer"
         ],
+        "hiddenTabSet": [],
         "console_left_on_top": false,
-        "console_right_on_top": true
-    }, 
+        "console_right_on_top": true,
+        "additional_source_columns": 0
+    },
     "real_time_spellchecking": false,
     "num_spaces_for_tab": 4,
     "show_margin": false,
@@ -32,5 +34,7 @@
     "source_with_echo": true,
     "wrap_tab_navigation": false,
     "reuse_sessions_for_project_links": true,
-    "jobs_tab_visibility": "shown"
+    "jobs_tab_visibility": "shown",
+    "initial_working_directory": "~",
+    "posix_terminal_shell": "bash"
 }
