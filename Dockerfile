@@ -23,7 +23,7 @@ RUN apt-get update \
     && rm -rf /tmp/downloaded_packages/ /tmp/*.rds \
     && mkdir /home/rstudio/.cmdstanr/ \
     && Rscript -e "cmdstanr::install_cmdstan(dir = '/home/rstudio/.cmdstanr/', cores = 2)" \
-    && Rscript -e "cmdstanr::set_cmdstan_path(path = '/home/rstudio/.cmdstanr/cmdstan-2.28.0')" \
+    && Rscript -e "cmdstanr::set_cmdstan_path(path = '/home/rstudio/.cmdstanr/cmdstan-2.28.1')" \
     && chown rstudio -R /home/rstudio/
 
 CMD ["/init"]
