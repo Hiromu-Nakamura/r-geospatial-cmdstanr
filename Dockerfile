@@ -19,6 +19,8 @@ RUN apt-get update \
         posterior \
         bayesplot \
         DataExplorer \
+        duckdb \
+        hereR \
     && install2.r --error --deps TRUE --repos https://mc-stan.org/r-packages/ cmdstanr \
     && rm -rf /tmp/downloaded_packages/ /tmp/*.rds \
     && mkdir /home/rstudio/.cmdstanr/ \
